@@ -1,28 +1,28 @@
 var mainNS = {
-	// data: [
-	// 	{
-	// 		title: "Home Alone",
-	// 		Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
-	// 		Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
-	// 		Genre: "Comedy",
-	// 		Year: "1990"
-	// 	},
-	// 	{
-	// 		title: "Home Alone2",
-	// 		Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
-	// 		Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
-	// 		Genre: "Comedy",
-	// 		Year: "1990"
-	// 	},
-	// 	{
-	// 		title: "Home Alone3",
-	// 		Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
-	// 		Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
-	// 		Genre: "Comedy",
-	// 		Year: "1990"
-	// 	}
+	data: [
+		{
+			title: "Home Alone",
+			Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
+			Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
+			Genre: "Comedy",
+			Year: "1990"
+		},
+		{
+			title: "Home Alone2",
+			Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
+			Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
+			Genre: "Comedy",
+			Year: "1990"
+		},
+		{
+			title: "Home Alone3",
+			Description: "An eight-Year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
+			Actors: "Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara",
+			Genre: "Comedy",
+			Year: "1990"
+		}
 
-	// ],
+	],
 	performSearch: function(){
 		console.log('aa');
 
@@ -37,7 +37,7 @@ var mainNS = {
 		mainNS.createTableFound();
 	},
 
-	createTableFound: function(data){
+	createTableFound: function(){
 		var tableContainer = document.getElementById("foundMovies");
 
 		// Create Table Header
@@ -61,7 +61,7 @@ var mainNS = {
 		table.appendChild(tableBody);
 
 		//Create Table Contents
-		mainNS.createTableRows(tableBody, data);
+		mainNS.createTableRows(tableBody);
 	},
 
 	createTable: function(config){
@@ -98,9 +98,9 @@ var mainNS = {
 
 	},
 
-	createTableRows: function(tableRef, data){
+	createTableRows: function(tableRef){
 		for (var i = 0; i < mainNS.data.length; i++){
-			var row = mainNS.createTableRow(data[i], i);
+			var row = mainNS.createTableRow(mainNS.data[i], i);
 			tableRef.appendChild(row);  
 		}
 		
@@ -208,6 +208,7 @@ var mainNS = {
 			alert("You succesfully added movie!");
 			mainNS.resetInputs();
 		}
+			mainNS.recordData();
 	},
 
 	checkInputs: function(){
@@ -239,6 +240,7 @@ var mainNS = {
 	},
 
 	recordData: function(){
+		console.log('here');
 		// var xhttp = new XMLHttpRequest();
 		// xhttp.onreadystatechange = function() {
 		//     if (this.readyState == 4 && this.status == 200) {
@@ -248,31 +250,34 @@ var mainNS = {
 		// xhttp.open("GET", "ajax_info.txt", true);
 		// xhttp.send();
 
-		var data = {}
-			data["title"] = $("#titleInput").val();
-			data["actors"] = $("#actorInput").val();
-			data["year"] = $("#yearInput").val();
-			data["genre"] = $("#genreInput").val();
-			data["description"] = $('#descrInput').val();
-			console.log("going to ajax")
-		$.ajax({
-		    type: "POST",
-		    contentType: "application/json",
-		    url: "/add",
-		    data: JSON.stringify(data),
-		    dataType: 'json',
-		    success: function (data) {
-		    	console.log("sent")
-		    	alert("Sent!");
-		        //$("#btn-update").prop("disabled", false);
-		        //...
-		    },
-		    error: function (e) {
-		    	alert("Movie not added successfully!");
-		        //$("#btn-save").prop("disabled", false);
-		        //...
-		    }
-		});
+		var entry = {}
+			entry["title"] = $("#titleInput").val();
+			entry["actors"] = $("#actorInput").val();
+			entry["year"] = $("#yearInput").val();
+			entry["genre"] = $("#genreInput").val();
+			entry["description"] = $('#descrInput').val();
+			// console.log("going to ajax")
+		// $.ajax({
+		//     type: "POST",
+		//     contentType: "application/json",
+		//     url: "/add",
+		//     data: JSON.stringify(data),
+		//     dataType: 'json',
+		//     success: function (data) {
+		//     	console.log("sent")
+		//     	alert("Sent!");
+		//         //$("#btn-update").prop("disabled", false);
+		//         //...
+		//     },
+		//     error: function (e) {
+		//     	alert("Movie not added successfully!");
+		//         //$("#btn-save").prop("disabled", false);
+		//         //...
+		//     }
+		// });
+		console.log('entry', entry);
+		console.log('mainNS.data', mainNS.data);
+		mainNS.data.push(entry);
 
 	},
 
