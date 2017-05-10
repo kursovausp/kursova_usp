@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>Movies Search Engine</title>
+  		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/mainStyles.css">
+	</head>
+	<body>
+	    <!-- Static navbar -->
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <div class="navbar-brand">Find movies by search criteria</div>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="/index.html">Search</a></li>
+	            <li><a href="/add.html">Add</a></li>
+	          </ul>
+	        </div>
+	    </nav>
+
+
+	    <div class="container">
+
+	      <!-- Main component for a primary marketing message or call to action -->
+	      <div class="jumbotron">
+	        <h2>Movies Search Engine</h2>
+		    <div class="form-group">
+		      <label for="actorInput">Actor:</label>
+		      <input type="text" class="form-control" id="actorInput">
+		   		<br>
+		      <label for="yearInput">Production year:</label>
+		      <input type="text" class="form-control" id="yearInput">
+		      <br>
+		      <label for="genreInput">Genre:</label>
+		      <select class="form-control" id="genreInput">
+		      	<option></option>
+		        <option>Action</option>
+		        <option>Adventure</option>
+		        <option>Animation</option>
+		        <option>Comedy</option>
+		        <option>Crime</option>
+		        <option>Documentary</option>
+		        <option>Drama</option>
+		        <option>Family</option>
+		        <option>Fantasy</option>
+		        <option>History</option>
+		        <option>Horror</option>
+		        <option>Romance</option>
+		        <option>Sci-Fi</option>
+		        <option>Western</option>
+		        <option>War</option>
+		      </select>
+		    </div>
+		    <button class="btn btn-lg btn-primary" onclick="mainNS.performSearch();" role="button">Search</button>
+	      </div>
+
+	    </div> <!-- /container -->
+
+	    <div class="container">
+	    	<div id="foundMovies">
+	    	</div>
+		 <!--  <h2>Found Movies</h2>  -->
+
+		 <!--  <table class="table tableCursor tableFoundHalf">
+		    <thead class="thead-default">
+		      <tr>
+		      	<th>#</th>
+		        <th>Title</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		      	<th scope="row">1</th>
+		        <td>Home Alone</td>
+		      </tr>
+		      <tr>
+		      	 <th scope="row">2</th>
+		        <td>The Godfather: Part III</td>
+		      </tr>
+		      <tr>
+		       	<th scope="row">3</th>
+		        <td>Dances with Wolves</td>
+		      </tr>
+		    </tbody>
+		  </table>
+
+		  <table class="table" style="max-width: 50%; display: inline-table; float:right;">
+		    <thead class="thead-default">
+		      <tr>
+		      	<th></th>
+		        <th>Home Alone</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		      	<th scope="row">Description:</th>
+		        <td>An eight-year-old trouble-maker must protect his home from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.</td>
+		      </tr>
+		      <tr>
+		      	 <th scope="row">Actors:</th>
+		        <td>Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard, Roberts Blossom, Catherine O'Hara</td>
+		      </tr>
+		      <tr>
+		       	<th >Genre:</th>
+		        <td>Comedy</td>
+		      </tr>
+		      <tr>
+		       	<th scope="row">Production Year:</th>
+		        <td>1990</td>
+		      </tr>
+		    </tbody>
+		  </table> -->
+
+		</div>
+
+  		<!-- Scripts -->
+    	<script src="/js/jquery-3.2.1.min.js"></script> 
+		<script src="/js/bootstrap.min.js"></script> 
+		<script src="/js/mainScript.js"></script> 
+	</body>
+</html>
