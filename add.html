@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>Movies Search Engine</title>
+  		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/mainStyles.css">
+	</head>
+	<body>
+	    <!-- Static navbar -->
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <div class="navbar-brand">Find movies by search criteria</div>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li><a href="/index.html">Search</a></li>
+	            <li class="active"><a href="/add.html">Add</a></li>
+	           
+	          </ul>
+	          
+	        </div>
+	    </nav>
+
+	    <div class="container">
+
+	      <!-- Main component for a primary marketing message or call to action -->
+	      <div class="jumbotron">
+	        <h2>Add Movie</h2>
+		    <div class="form-group">
+		      <label for="titleInput">Title:</label>
+		      <input type="text" class="form-control" id="titleInput">
+		      <br>
+		      <div class="alert alert-danger" id="titleMsg" style="display:none;">
+			    <strong>Please add title!</strong>
+			  </div>
+		      <label for="actorInput">Actors:</label>
+		      <input type="text" class="form-control" id="actorInput">
+		   		<br>
+		   	<div class="alert alert-danger" id="actorsMsg" style="display:none;">
+			    <strong>Please add actors!</strong>
+			  </div>
+		      <label for="yearInput">Production year:</label>
+		      <input type="text" class="form-control" id="yearInput">
+		      <br>
+		      <div class="alert alert-danger" id="yearMsg" style="display:none;">
+			    <strong>Please add production year!</strong>
+			  </div>
+		      <label for="genreInput">Genre:</label>
+		      <select class="form-control" id="genreInput">
+		      	<option id="nullGenre"></option>
+		        <option>Action</option>
+		        <option>Adventure</option>
+		        <option>Animation</option>
+		        <option>Comedy</option>
+		        <option>Crime</option>
+		        <option>Documentary</option>
+		        <option>Drama</option>
+		        <option>Family</option>
+		        <option>Fantasy</option>
+		        <option>History</option>
+		        <option>Horror</option>
+		        <option>Romance</option>
+		        <option>Sci-Fi</option>
+		        <option>Western</option>
+		        <option>War</option>
+		      </select>
+		      <br>
+		      <div class="alert alert-danger" id="genreMsg" style="display:none;">
+			    <strong>Please add genre!</strong>
+			  </div>
+		      <label for="descrInput">Description:</label>
+		      <input type="text" class="form-control" id="descrInput">
+		      <br>
+		      <div class="alert alert-danger" id="descrMsg" style="display:none;">
+			    <strong>Please add description!</strong>
+			  </div>
+		    </div>
+		    <button class="btn btn-lg btn-primary" onclick="mainNS.addMovie();" role="button">Add</button>
+	      </div>
+
+	    </div> <!-- /container -->
+
+
+  		<!-- Scripts -->
+    	<script src="/js/jquery-3.2.1.min.js"></script> 
+		<script src="/js/bootstrap.min.js"></script> 
+		<script src="/js/mainScript.js"></script> 
+	</body>
+</html>
