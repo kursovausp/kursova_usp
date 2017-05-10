@@ -1,0 +1,17 @@
+.thead-default > tr > th {
+    color: #464a4c;
+    background-color: #eceeef !important;
+}
+
+.tableCursor > tbody > tr {cursor:pointer !important;}
+
+.tableFoundHalf{
+	max-width: 49% !important;
+	display: inline-table !important;
+}
+
+.tableMovieInfo {
+	max-width: 50%;
+    display: inline-table;
+    float: right;
+}
